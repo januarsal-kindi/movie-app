@@ -23,7 +23,10 @@
       "@components/*": ["./src/components/*"],
       "@pages/*": ["./src/pages/*"],
       "@config/*": ["./src/config/*"],
+      "@shared/*": ["./src/shared/*"],
       "@constant/*": ["./src/shared/constant/*"],
+      "@store/*": ["./src/store/*"],
+
      },
   },
   

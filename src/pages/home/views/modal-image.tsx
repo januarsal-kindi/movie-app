@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { memo } from 'react'
 import Modal from '../../../components/modal'
 
 type ModalImageProps = {
     showModalImages : boolean,
     onCloseModalImage : VoidFunction,
-    urlImage : string|null 
+    urlImage : string|null | undefined
 }
 
 const popupImage : React.FunctionComponent<ModalImageProps> = (props :ModalImageProps ) => {
@@ -23,4 +23,4 @@ const popupImage : React.FunctionComponent<ModalImageProps> = (props :ModalImage
     )
 }
 
-export default popupImage
+export default memo(popupImage)
