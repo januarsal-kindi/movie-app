@@ -1,0 +1,17 @@
+@import "~tailwindcss/base";
+@import "~tailwindcss/components";
+@import "~tailwindcss/utilities";
+
+.bg-teal-500 {
+    --bg-opacity: 1!important;
+    background-color: #38b2ac!important;
+    background-color: rgba(56,178,172,var(--bg-opacity))!important;
+    color: white;
+}
+.bg-black {
+    background: black;
+}
+
+.text-black {
+    color: black;
+}
