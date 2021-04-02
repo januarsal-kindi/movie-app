@@ -10,10 +10,10 @@ const detailMovie:React.FC<{}> =() =>{
         </div>
         <div className="container lg mx-auto my-12">
             <div className="flex ">
-                <div className="w-1/3">
+                <div className="w-1/4">
                     <img className="rounded-xl img-profile" src="https://m.media-amazon.com/images/M/MV5BMTdjZTliODYtNWExMi00NjQ1LWIzN2MtN2Q5NTg5NTk3NzliL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg"/>
                 </div>
-                <div className="w-2/3">
+                <div className="w-3/4">
                     <div>
                         <h1 className="text-4xl">Batman (1989)</h1>
                         <div className="flex mt-4">

@@ -4,8 +4,8 @@ export const MOVIE_LIST_SUCCESS = "MOVIE_LIST_SUCCESS";
 
 export type MovieList = {
   abilities: PokemonAbility[],
-  sprites: PokemonSprites,
-  stats: PokemonStat[]
+  // sprites: PokemonSprites,
+  // stats: PokemonStat[]
 }
 
 export type PokemonAbility = {
@@ -26,7 +26,7 @@ export interface MovieListFail {
 
 export interface MovieListSuccess {
   type: typeof MOVIE_LIST_SUCCESS,
-  payload: PokemonType
+  // payload: PokemonType
 }
 
-export type PokemonDispatchTypes = PokemonLoading | PokemonFail | PokemonSuccess
+// export type PokemonDispatchTypes = PokemonLoading | PokemonFail | PokemonSuccess

@@ -1,5 +1,7 @@
 import React from 'react'
 import './assets/style/style.scss';
+import './assets/style/plugin/main.css';
+
 import Routes from './shared/config/route'
 import { BrowserRouter  as Router, Route, Link, Switch } from 'react-router-dom'
 
