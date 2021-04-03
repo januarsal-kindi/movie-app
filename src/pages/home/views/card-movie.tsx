@@ -2,17 +2,20 @@ import React, { PropsWithChildren } from 'react'
 
 interface CardProps extends PropsWithChildren<any>{
     onClickImage:(urlImage:string | undefined) => void,
-    onClickCard?: VoidFunction,
+    onClickCard: (movieId:string) => void,
     image? : string,
     title ? : string,
     years?: string | undefined,
-    type?: string 
+    type?: string ,
+    idMovie : string
 
 }
 
 const defautCardProps : CardProps ={
     onClickImage:()=> ({}),
     onClickCard: () => {},
+    idMovie : ''
+
 }
 const Card: React.FunctionComponent<CardProps> = (props) => {
     return (
@@ -24,7 +27,7 @@ const Card: React.FunctionComponent<CardProps> = (props) => {
                     onClick={() => props.onClickImage(props.image)}
                 />
                 <div className="py-4 px-6"
-                    onClick={props.onClickCard}
+                    onClick={() => props.onClickCard(props.idMovie)}
                 >
                     <h1 className="text-2xl font-semibold text-gray-800">{props.title} ({props.years})</h1>
                     <div className="flex items-center mt-4 text-gray-700">

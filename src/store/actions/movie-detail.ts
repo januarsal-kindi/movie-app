@@ -1,30 +1,40 @@
-import {Dispatch} from "redux";
-import {MOVIE_LIST_LOADING, MOVIE_LIST_FAIL, MOVIE_LIST_SUCCESS, MovieListDispatchType} from "@store/type/movie-list-type";
+import { Dispatch } from "redux";
+import {
+	MOVIE_DETAIL_LOADING,
+	MOVIE_DETAIL_SUCCESS,
+	MOVIE_DETAIL_FAIL,
+	MovieDetailDispatchType,
+} from "@store/type/movie-detail-type";
 import axios from "axios";
 
-export const getMovieList = (pokemon: string) => async (dispatch: Dispatch<MovieListDispatchType>) => {
-  try {
-    dispatch({
-      type: MOVIE_LIST_LOADING
-    })
+export const getMovieById = (idMovie: string) => async (
+	dispatch: Dispatch<MovieDetailDispatchType>,
+) => {
+	try {
+		dispatch({
+			type: MOVIE_DETAIL_LOADING,
+		});
 
-    const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-    if(res.data){
-        if(res.data.Response === "True"){
-            dispatch({
-                type: MOVIE_LIST_SUCCESS,
-                payload: res.data
-            })          
-        }
-    }
-    dispatch({
-      type: MOVIE_LIST_SUCCESS,
-      payload: res.data
-    })
-
-  } catch(e) {
-    dispatch({
-      type: MOVIE_LIST_FAIL
-    })
-  }
+		const res = await axios.get(
+			`http://www.omdbapi.com?apikey=faf7e5bb&i=${idMovie}`,
+		);
+		if (res.data) {
+			if (res.data.Response === "True") {
+				dispatch({
+					type: MOVIE_DETAIL_SUCCESS,
+					payload: {
+            ...res.data
+					},
+				});
+			}
+		} else {
+			dispatch({
+				type: MOVIE_DETAIL_FAIL,
+			});
+		}
+	} catch (e) {
+		dispatch({
+			type: MOVIE_DETAIL_FAIL,
+		});
+	}
 };

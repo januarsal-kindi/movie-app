@@ -9,7 +9,7 @@ export default [
     },
     {
         name : 'detail',
-        path: '/detail',
+        path: '/detail/:id',
         component: DetailMovie
     }
 ]

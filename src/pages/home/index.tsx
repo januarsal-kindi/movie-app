@@ -1,5 +1,5 @@
 import React, { useState, useEffect ,useRef } from 'react'
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import DefaultLayout from '@shared/hoc/defaultLayout'
 import CardMovie from './views/card-movie'
 import CardMovieLoadiing from './views/card-movie-loading'
@@ -24,8 +24,8 @@ const Home: React.FC = () => {
         setShowModalImage(true)
     }
 
-    const clickCardHandler = () => {
-        history.push('/detail')
+    const clickCardHandler = (idMovie : string | undefined) => {
+        history.push(`/detail/${idMovie}`)
     }
     const submitSearchHandler = (value :string) => {
         dispatch(getMovieListSearch(value ))
@@ -76,6 +76,7 @@ const Home: React.FC = () => {
                             title={movie.Title}
                             image={movie.Poster}
                             type={movie.Type}
+                            idMovie={movie.imdbID}
                             key={index}
                         ></CardMovie>
                     ))}
